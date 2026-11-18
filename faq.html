@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQs | Homestead Support</title>
+<meta name="description" content="Answers to the questions families ask Homestead Support: what we cook, where we work, groceries, meals, checks, cost and funding.">
+<meta name="theme-color" content="#F7F4EE">
+<meta property="og:title" content="FAQs | Homestead Support">
+<meta property="og:description" content="A small Melbourne business that cooks fresh, familiar meals in your own kitchen, or your parent's.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<!-- Fonts used on this page
+     Headings, buttons, tabs, wordmark: Aleo (400/500/600/700), then Georgia, "Times New Roman", serif
+     Body text, forms, labels, nav: Roboto (400/500/700), then system-ui, -apple-system, "Segoe UI", Arial, sans-serif
+     Loaded from Google Fonts. If they fail to load, the fallbacks above are used in that order. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Brand (majority of colour use) */
+  --brand:#6EBFB8;
+  --brand-50:#DFF4E8; --brand-100:#B6E1CB; --brand-300:#2D8583; --brand-500:#005865;
+  --grey-xl:#F7F4EE; --grey-l:#C7C7C5; --grey:#888884; --grey-d:#3A3A38; --grey-xd:#2E2E2C;
+  --black:#0F0F0F; --white:#fff;
+  /* Primary: call to action buttons only (default, hover, pressed) */
+  --primary:#7A0B2A; --primary-100:#F9C5BD; --primary-200:#FF797C; --primary-300:#9E0009; --primary-500:#470604;
+  --cta:var(--primary); --cta-hover:var(--primary-300); --cta-press:var(--primary-500);
+  /* Neutral */
+  --neutral-xl:#EAE6E1; --neutral-l:#D5C9B8; --neutral:#C4AC8B; --neutral-d:#675342; --neutral-xd:#392718;
+  /* Secondary: tags, focus ring, links */
+  --secondary-l:#C8DBE4; --secondary:#2B5F8E; --secondary-d:#003D64;
+  /* Tertiary and accents: transition shades only with their base colour */
+  --tertiary-l:#EEEAF7; --tertiary:#9D87D2; --tertiary-d:#673695;
+  --yellow-l:#FFFCE5; --yellow:#FFD10A; --yellow-d:#F4A600; --peony:#F83C52;
+  /* Validation */
+  --success-l:#EFF9E7; --success:#2DCB48; --success-d:#006D00;
+  --warning-l:#FFE1CB; --warning:#FF6C00; --error:#F43319;
+
+  --font-head:"Aleo", Georgia, "Times New Roman", serif;
+  --font-body:"Roboto", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --radius:16px;
+  --wrap:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--grey-xl);color:var(--grey-d);font-family:var(--font-body);font-size:1.0625rem;line-height:1.65}
+img{max-width:100%;display:block}
+a{color:var(--secondary)}
+h1,h2,h3{font-family:var(--font-head);color:var(--grey-d);line-height:1.15;margin:0 0 .5em;font-weight:700}
+h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.01em;font-weight:600}
+h2{font-size:clamp(1.75rem,3.6vw,2.5rem)}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--secondary);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--grey-d);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+.eyebrow{font-family:var(--font-body);font-size:.8125rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-500);margin:0 0 .75rem}
+section{padding:88px 0;scroll-margin-top:72px}
+.lead{font-size:1.2rem;max-width:62ch}
+
+/* Buttons: primary colour call to action, with a colour + lift micro animation.
+   Default Primary #7A0B2A -> hover Primary shade #9E0009 -> pressed/disabled Primary shade #470604 (revised palette).
+   White text meets AA contrast on all three states. */
+.btn{--b:var(--cta);display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:44px;padding:9px 22px;border-radius:10px;border:2px solid transparent;font:500 1.0625rem/1.2 var(--font-head);text-decoration:none;cursor:pointer;
+  transition:background-color .28s ease,border-color .28s ease,color .28s ease,transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease}
+.btn-cta{background:var(--cta);color:#fff}
+.btn-cta:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 8px 18px rgba(122,11,42,.28)}
+.btn-cta:active,.btn-cta:disabled{background:var(--cta-press);transform:translateY(0) scale(.98);box-shadow:none}
+.btn-ghost{background:transparent;color:var(--cta);border-color:var(--cta)}
+.btn-ghost:hover{background:var(--cta-hover);border-color:var(--cta-hover);color:#fff;transform:translateY(-2px);box-shadow:0 8px 18px rgba(158,0,9,.22)}
+.btn-ghost:active{background:var(--cta-press);border-color:var(--cta-press);color:#fff;transform:translateY(0) scale(.98);box-shadow:none}
+/* on the dark teal band */
+.btn-onDark{background:var(--cta);color:#fff;border-color:#fff}
+.btn-onDark:hover{background:var(--cta-hover);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.28)}
+.btn-onDark:active{background:var(--cta-press);transform:translateY(0) scale(.98);box-shadow:none}
+nav.primary .btn{min-height:42px;padding:8px 20px;white-space:nowrap}
+nav.primary a{white-space:nowrap}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,244,238,.94);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid rgba(58,58,56,.1)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--grey-d);font:500 1.25rem/1 var(--font-head)}
+.brand img{width:44px;height:44px}
+nav.primary ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+nav.primary a:not(.btn){color:var(--grey-d);text-decoration:none;font-weight:500}
+nav.primary a:not(.btn):hover{color:var(--brand-500);text-decoration:underline;text-underline-offset:6px}
+.menu-btn{display:none;background:none;border:2px solid var(--grey-d);color:var(--grey-d);border-radius:10px;min-height:44px;padding:0 14px;font:700 .95rem var(--font-head);cursor:pointer}
+
+/* Hero */
+.hero{padding:72px 0 96px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1 em{font-style:normal;color:var(--brand-500);display:block;font-size:.85em;font-weight:600;line-height:1.15;margin-top:.1em}
+.hero .eyebrow{text-wrap:balance;text-transform:none;letter-spacing:0;font-size:1.0625rem;font-weight:500}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero .note{margin-top:20px;font-size:.95rem;color:#55554F}
+/* Hero offer: a clickable tablecloth (red gingham with lace trim) */
+.hero-art{position:relative;display:block;aspect-ratio:1/1;max-width:440px;margin-left:auto;width:100%;border-radius:24px;overflow:hidden;text-decoration:none;color:var(--grey-d);
+  background-color:#fff;
+  background-image:linear-gradient(90deg,rgba(122,11,42,.42) 50%,transparent 50%),linear-gradient(rgba(122,11,42,.42) 50%,transparent 50%);
+  background-size:44px 44px;
+  box-shadow:0 18px 40px rgba(58,58,56,.18);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease}
+.hero-art::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36px;background:radial-gradient(circle at 18px 0,transparent 12px,var(--grey-xl) 13px) 0 0/36px 36px repeat-x;border-top:0;pointer-events:none}
+.hero-art:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(58,58,56,.24)}
+.hero-art:active{transform:translateY(0) scale(.99)}
+.hero-art:focus-visible{outline:4px solid var(--secondary);outline-offset:4px}
+.hero-art .card{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:76%;background:#fff;border-radius:var(--radius);padding:22px 22px 22px;box-shadow:0 14px 34px rgba(58,58,56,.2);text-align:center}
+.hero-art .card p{margin:0}
+.hero-art .card .btn{margin-top:16px;width:100%;pointer-events:none}
+.hero-art:hover .card .btn{background:var(--cta);color:#fff;box-shadow:0 8px 18px rgba(122,11,42,.22)}
+.hero-art:active .card .btn{background:var(--cta-press);border-color:var(--cta-press);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:0;padding:0;list-style:none}
+.chips li{background:var(--brand-50);color:var(--brand-500);font-size:.85rem;font-weight:500;padding:4px 12px;border-radius:999px}
+
+/* Who we are */
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.values{display:grid;gap:16px}
+.value{display:flex;gap:16px;align-items:flex-start;background:var(--surf);border-radius:var(--radius);padding:20px}
+.value .dot{flex:none;width:44px;height:44px;border-radius:50%;background:var(--brand);display:grid;place-items:center;font:700 1.15rem var(--font-head);color:var(--grey-d)}
+.value h3{margin:0 0 4px}
+.value p{margin:0;color:#4a4a47}
+
+/* What we do */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.card-box{background:var(--surf);border-radius:var(--radius);padding:30px 26px;border-top:6px solid var(--brand);box-shadow:0 1px 0 rgba(58,58,56,.06)}
+.card-box.alt{border-top-color:var(--secondary)}
+.card-box.mid{border-top-color:var(--neutral-d)}
+.card-box h3{margin-bottom:.4em}
+.card-box .tag{background:var(--brand-50);color:var(--brand-500)}
+.card-box.alt .tag{background:var(--secondary-l);color:var(--secondary-d)}
+.card-box.mid .tag{background:var(--neutral-l);color:var(--neutral-d)}
+.card-box p{margin:0;color:#4a4a47}
+.tag{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:36px;font-size:.75rem;font-weight:700;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:var(--secondary-d);background:var(--secondary-l);padding:6px 14px 2px;border-radius:999px;white-space:nowrap;margin-bottom:18px}
+
+/* How it works */
+
+.two>*,.contact-grid>*,.hero-grid>*,.forms{min-width:0}
+.cta-row{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px}
+
+/* Partner band */
+
+/* FAQ */
+.faq{max-width:820px;margin:36px 0 0}
+.faq-h{font-size:1.4rem;margin:32px 0 12px;color:var(--brand-500)}
+.faq-h:first-child{margin-top:0}
+.faq details{background:var(--surf);border-radius:12px;margin-bottom:12px;border:1px solid rgba(58,58,56,.1)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 56px 18px 22px;font:600 1.1rem/1.4 var(--font-head);position:relative;border-radius:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font:400 1.6rem/1 var(--font-body);color:var(--secondary)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details[open] summary{border-bottom:1px solid rgba(58,58,56,.08);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.faq .ans{padding:16px 22px 6px}
+.faq .ans p{color:#4a4a47}
+
+/* Contact */
+
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.contact-aside p{color:#4a4a47}
+form.enquiry{background:var(--surf);border-radius:var(--radius);padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label,.legend{font-weight:500;font-size:.95rem}
+.opt{font-weight:400;color:#66665F}
+input,select,textarea{font:inherit;color:var(--grey-d);background:#fff;border:1.5px solid var(--grey);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--secondary);outline-offset:1px;border-color:var(--secondary)}
+.field.check{flex-direction:row;gap:12px;}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:.95rem}
+.check input{width:22px;min-height:22px;height:22px;margin-top:3px;flex:none;accent-color:var(--secondary)}
+.form-note{font-size:.9rem;color:#55554F;margin:0}
+.status{grid-column:1/-1;margin:0;padding:14px 16px;border-radius:10px;background:var(--brand-50);color:var(--brand-500);font-weight:500}
+.status[hidden]{display:none}
+.status.warn{background:var(--yellow-l);border-left:5px solid var(--yellow);color:var(--grey-d)}
+.hp{position:absolute;left:-9999px}
+
+/* Placeholders for content still to be confirmed */
+mark.ph{background:var(--yellow);color:var(--grey-d);padding:1px 6px;border-radius:4px;font-weight:500}
+
+/* Footer */
+footer{background:var(--grey-xd);color:#E9E6DF;padding:56px 0 40px}
+footer a{color:#fff}
+.foot{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start}
+.foot .brand{color:#fff}
+.foot .brand .disc{flex:none;width:44px;height:44px;border-radius:50%;background:var(--grey-xl);display:flex;align-items:center;justify-content:center}
+.foot .brand .disc img{width:42px;height:42px;flex:none}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 24px}
+.fine{margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:.875rem;color:#C9C5BB}
+
+/* Responsive */
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero-grid,.two,.contact-grid,.foot{grid-template-columns:minmax(0,1fr)}
+  .hero-art{margin:0 auto;max-width:360px}
+  .cards{grid-template-columns:1fr}
+  .price-card{position:static}
+}
+@media (max-width:1000px){
+  .js .menu-btn{display:inline-flex;align-items:center}
+  .js nav.primary{display:none;position:absolute;left:0;right:0;top:100%;background:var(--grey-xl);border-bottom:1px solid rgba(58,58,56,.12);padding:12px 20px 20px}
+  .js nav.primary.open{display:block}
+  .js nav.primary ul{flex-direction:column;align-items:stretch;gap:4px}
+  .js nav.primary li a:not(.btn){display:block;padding:12px 4px}
+  nav.primary ul{flex-wrap:wrap;gap:8px 18px}
+  .brand{font-size:1.1rem}
+}
+@media (max-width:560px){
+  form.enquiry{grid-template-columns:1fr;padding:22px}
+  .hero{padding:44px 0 64px}
+}
+/* Hero offer card */
+.kicker{font:700 .8125rem/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-500);margin:0 0 6px}
+.hero-art .card .price-sm{font:700 3.2rem/1 var(--font-head);color:var(--grey-d);margin:2px 0 6px}
+.hero-art .card .card-line{font:600 1.05rem/1.35 var(--font-head)}
+.hero-art .card .card-line.small{font:500 .95rem/1.4 var(--font-body);color:#4a4a47;margin-top:8px}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+
+/* Trial + how it works */
+#how .lead{margin-bottom:1.6em}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:40px 1fr;column-gap:16px;align-items:center;position:relative;padding-bottom:26px}
+.steps li>div{display:contents}
+.steps li:last-child{padding-bottom:0}
+.steps li:not(:last-child)::before{content:"";position:absolute;left:18px;top:46px;bottom:6px;width:3px;border-radius:2px;background:var(--brand-100)}
+.steps .ico{grid-column:1;grid-row:1;width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--brand);border:3px solid var(--brand);display:grid;place-items:center}
+.steps .ico svg{width:26px;height:26px}
+.steps .ico svg path{stroke-width:2.5px;vector-effect:non-scaling-stroke}
+.steps h3{grid-column:2;grid-row:1;margin:0;min-height:40px;display:flex;align-items:center}
+.steps p{grid-column:2;grid-row:2;margin:4px 0 0;color:var(--grey-d)}
+.price-card{position:static}
+}
+@media (max-width:1000px){
+  .js .menu-btn{display:inline-flex;align-items:center}
+  .js nav.primary{display:none;position:absolute;left:0;right:0;top:100%;background:var(--grey-xl);border-bottom:1px solid rgba(58,58,56,.12);padding:12px 20px 20px}
+  .js nav.primary.open{display:block}
+  .js nav.primary ul{flex-direction:column;align-items:stretch;gap:4px}
+  .js nav.primary li a:not(.btn){display:block;padding:12px 4px}
+  nav.primary ul{flex-wrap:wrap;gap:8px 18px}
+  .brand{font-size:1.1rem}
+}
+@media (max-width:560px){
+  form.enquiry{grid-template-columns:1fr;padding:22px}
+  .hero{padding:44px 0 64px}
+}
+/* Hero offer card */
+.kicker{font:700 .8125rem/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-500);margin:0 0 6px}
+.hero-art .card .price-sm{font:700 3.2rem/1 var(--font-head);color:var(--grey-d);margin:2px 0 6px}
+.hero-art .card .card-line{font:600 1.05rem/1.35 var(--font-head)}
+.hero-art .card .card-line.small{font:500 .95rem/1.4 var(--font-body);color:#4a4a47;margin-top:8px}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+
+/* Trial + how it works */
+#how .lead{margin-bottom:1.6em}
+.price-card{background:var(--surf);border-radius:var(--radius);padding:32px;border-top:6px solid var(--brand-500);position:sticky;top:96px;text-align:center}
+.price-card .price{font:700 4rem/1 var(--font-head);margin:6px 0 8px;color:var(--grey-d)}
+.price-card .price-sub{font:600 1.1rem/1.4 var(--font-head);margin:0 0 14px}
+.price-card .spots-line{margin:0 0 6px;color:var(--brand-500)}
+.price-card .exchange{margin:0 0 6px}
+.price-card .small{font-size:.95rem;color:#55554F;margin:0 0 22px}
+.price-actions{display:grid;gap:12px}
+
+/* Tabs and forms */
+.tabs{display:flex;gap:0;margin:0;flex-wrap:wrap;align-items:flex-end}
+.tab{font:600 1.0625rem/1.2 var(--font-head);padding:14px 26px 12px;min-height:50px;border-radius:14px 14px 0 0;border:0;background:var(--grey-l);color:var(--grey-d);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.tab:hover{background:#B9B9B6}
+.tab[aria-selected="true"]{background:var(--surf);color:var(--grey-d)}
+.tab[aria-selected="true"]:hover{background:var(--surf)}
+form.enquiry{border-top-left-radius:0}
+.enquiry[hidden]{display:none}
+.spots-line-inline{font-weight:500}
+.limit-note{background:var(--warning-l);border-left:6px solid var(--warning);border-radius:8px;padding:14px 16px;margin:0 0 1em;font-size:.98rem;color:var(--grey-d)}
+.contact-aside .limit-note,.limit-note strong{color:var(--grey-d)}
+
+/* Meet your cook */
+
+.cook-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.cook-grid>*{min-width:0}
+.cook-photo{margin:0;min-width:0;max-width:380px;width:100%}
+.slides{overflow:hidden;border-radius:var(--radius);touch-action:pan-y}
+.track{display:flex;transition:transform .35s ease}
+.slide{flex:0 0 100%;min-width:0;margin:0;transition:visibility 0s linear .35s}
+.js .slide[aria-hidden="true"]{visibility:hidden}
+.js .slide[aria-hidden="false"]{visibility:visible;transition-delay:0s}
+.slide img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+.photo-ph{aspect-ratio:1/1;border-radius:var(--radius);border:2px dashed var(--brand-300);background:var(--surf);display:grid;place-items:center;text-align:center;padding:24px}
+.photo-ph p{margin:0}
+.slide figcaption{font-size:.9rem;margin-top:10px;color:#4a4a47;min-height:1.5em}
+.slider-ctl{display:none;align-items:center;justify-content:center;gap:12px;margin-top:14px}
+.js .slider-ctl{display:flex}
+.arrow{width:44px;height:44px;border-radius:50%;border:2px solid var(--brand-500);background:var(--surf);color:var(--brand-500);display:grid;place-items:center;cursor:pointer;padding:0;transition:background-color .2s ease,color .2s ease}
+.arrow:hover{background:var(--brand-500);color:#fff}
+.dots{display:flex;gap:2px}
+.dots button{width:28px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.dots button::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--surf);border:1.5px solid var(--brand-300);transition:width .25s ease,background-color .25s ease}
+.dots button[aria-current="true"]::before{width:24px;background:var(--brand-500);border-color:var(--brand-500)}
+#cook .chips li.more{background:transparent;border:1px dashed var(--brand-300)}
+.cook-body h2{margin-bottom:.6em}
+#cook .chips{justify-content:flex-start;margin:22px 0 14px}
+#cook .chips li{background:var(--surf);border:1px solid var(--brand-100);padding:5px 14px}
+.cook-note{font-size:.95rem;color:#4a4a47;margin:0 0 .6em}
+#cook .cta-row{margin-top:24px}
+@media (max-width:900px){
+  .cook-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .photo-ph,.slide img{aspect-ratio:1/1}
+}
+#how .hours{color:var(--secondary)}
+</style>
+
+<style>
+/* Section rhythm: hero cream, then white and cream alternate. --bg is the section colour, --surf the colour of cards sitting on it. */
+:root{--bg:var(--grey-xl);--surf:#fff}
+#who,#for,#know,#faqs{background:#fff;--bg:#fff;--surf:var(--grey-xl)}
+#cook,#how,#trust,#contact{background:var(--grey-xl);--bg:var(--grey-xl);--surf:#fff}
+.hero{--bg:var(--grey-xl);--surf:#fff}
+/* What's included list in the price card */
+.price-card .incl{list-style:none;margin:0 0 14px;padding:0;font:600 1.1rem/1.5 var(--font-head)}
+.price-card .incl li{margin:0}
+/* Before you book + trust blocks */
+.know-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.know-grid>*{min-width:0}
+.panel{background:var(--surf);border-radius:var(--radius);padding:28px 26px;border-top:6px solid var(--brand)}
+.panel.alt{border-top-color:var(--secondary)}
+.panel.mid{border-top-color:var(--neutral-d)}
+.panel h3{margin:0 0 .5em}
+.panel p{margin:0 0 .8em;color:#4a4a47}
+.panel p:last-child{margin-bottom:0}
+.panel strong{color:var(--grey-d)}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.trust-grid>*{min-width:0}
+.notify{margin-top:14px}
+@media (max-width:900px){
+  .know-grid,.trust-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+
+/* ---- Final pass: single cook photo, mobile-first forms ---- */
+.cook-photo{margin:0 auto;max-width:380px;width:100%;text-align:center}
+.cook-photo img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+.cook-photo figcaption{margin-top:12px;font-size:.95rem;color:#4a4a47;text-align:center}
+.notify .btn{white-space:normal;text-align:center}
+.faq .ans .notify{margin:0 0 .8em}
+
+/* Forms: one column by default (phones), two columns from 640px */
+.tabs{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.tab{padding:12px 10px;min-height:56px;font-size:1rem;line-height:1.2;text-align:center}
+form.enquiry{grid-template-columns:minmax(0,1fr);gap:16px;padding:22px 18px;scroll-margin-top:88px}
+input,select,textarea{font-size:1rem;min-height:52px;padding:13px 14px}
+textarea{min-height:120px}
+select{-webkit-appearance:none;appearance:none;padding-right:44px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'%3E%3Cpath d='M2 2l6 6 6-6' fill='none' stroke='%233A3A38' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center}
+.check{gap:14px;padding:4px 0}
+.check input{width:26px;height:26px;min-height:26px;margin-top:1px}
+.check label{font-size:.95rem;line-height:1.5}
+.field.full .btn{width:100%;min-height:54px}
+.contact-grid{gap:32px}
+@media (min-width:640px){
+  .tabs{display:flex;align-items:flex-end}
+  .tab{padding:14px 26px 12px;min-height:50px;font-size:1.0625rem}
+  form.enquiry{grid-template-columns:1fr 1fr;gap:18px 20px;padding:32px}
+  .field.full .btn{width:auto;min-width:240px}
+  .contact-grid{gap:56px}
+}
+@media (min-width:901px){
+  .contact-grid{grid-template-columns:.8fr 1.2fr}
+}
+
+/* ---- Sticky header, mobile menu and form tabs: pure CSS, no script needed ---- */
+header.site{position:-webkit-sticky;position:sticky;top:0;-webkit-backdrop-filter:saturate(1.2) blur(8px)}
+.nav-toggle,.tab-radio{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
+@media (max-width:1000px){
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  nav.primary{display:none;position:absolute;left:0;right:0;top:100%;background:var(--grey-xl);border-bottom:1px solid rgba(58,58,56,.12);padding:12px 20px 20px;max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow-y:auto;box-shadow:0 12px 24px rgba(58,58,56,.12)}
+  .nav-toggle:checked ~ nav.primary{display:block}
+  nav.primary ul{flex-direction:column;align-items:stretch;gap:4px}
+  nav.primary li a:not(.btn){display:block;padding:12px 4px}
+}
+.menu-btn:focus-visible{outline:3px solid var(--secondary);outline-offset:3px}
+.tab{display:flex;align-items:center;justify-content:center;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+.forms form.enquiry{display:none}
+#ft-trial:checked ~ #panel-trial,#ft-callback:checked ~ #panel-callback{display:grid}
+#ft-trial:checked ~ .tabs label[for="ft-trial"],#ft-callback:checked ~ .tabs label[for="ft-callback"]{background:var(--surf);color:var(--grey-d)}
+#ft-trial:focus-visible ~ .tabs label[for="ft-trial"],#ft-callback:focus-visible ~ .tabs label[for="ft-callback"]{outline:3px solid var(--secondary);outline-offset:-3px}
+
+/* ---- Round 4: bigger logo, hamburger, header that hides on scroll down, even hero offer card ---- */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+header.site{transition:transform .28s ease}
+.js header.site.is-hidden{transform:translateY(-100%)}
+@media (max-width:1000px){
+  .bar{min-height:80px}
+  .brand{gap:12px;font-size:1.3rem}
+  .brand img{width:60px;height:60px}
+  .menu-btn{width:48px;height:48px;min-height:48px;padding:0;border:2px solid var(--grey-d);border-radius:12px;background:transparent;flex-direction:column;gap:5px}
+  .menu-btn .bl{display:block;width:22px;height:2.5px;border-radius:2px;background:var(--grey-d);transition:transform .25s ease,opacity .2s ease}
+  .nav-toggle:checked ~ .menu-btn .bl:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .nav-toggle:checked ~ .menu-btn .bl:nth-child(2){opacity:0}
+  .nav-toggle:checked ~ .menu-btn .bl:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  nav.primary{max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px)}
+  section{scroll-margin-top:84px}
+}
+@media (max-width:380px){ .brand{font-size:1.15rem} .brand img{width:54px;height:54px} }
+
+/* Hero offer card: same look on every screen, with even gingham margins on all four sides */
+.hero-art{--m:clamp(28px,9vw,52px);aspect-ratio:auto;display:flex;align-items:center;justify-content:center;padding:var(--m) var(--m) calc(var(--m) + 30px);background-size:clamp(30px,9vw,44px) clamp(30px,9vw,44px)}
+.hero-art .card{position:static;transform:none;left:auto;top:auto;width:100%;padding:22px 20px}
+@media (max-width:900px){.hero-art{max-width:400px;margin:0 auto}}
+
+/* ---- Round 5: Before you book card + pop-up, FAQ link ---- */
+#contact{background:#fff;--bg:#fff;--surf:var(--grey-xl)}
+.know-card{display:block;text-decoration:none;color:var(--grey-d);background:var(--warning-l);border-left:6px solid var(--warning);border-radius:12px;padding:18px 20px;margin:0 0 1em;transition:transform .2s ease,box-shadow .2s ease}
+.know-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(58,58,56,.14)}
+.know-card .kicker{display:block;color:var(--neutral-d)}
+.know-card .k-title{display:block;font:600 1.2rem/1.3 var(--font-head);margin:2px 0 6px}
+.know-card .k-text{display:block;font-size:.95rem;line-height:1.55;color:var(--grey-d)}
+.know-card .k-more{display:inline-block;margin-top:10px;font-weight:700;color:var(--secondary);text-decoration:underline;text-underline-offset:4px}
+.more-faq{margin:28px 0 0}
+.more-faq a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-underline-offset:4px}
+.anchor{display:block;height:0;scroll-margin-top:96px}
+.modal{display:none;position:fixed;inset:0;z-index:200;align-items:flex-end;justify-content:center}
+.modal:target,.modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(15,15,15,.55)}
+.modal-box{position:relative;--surf:var(--grey-xl);background:#fff;width:100%;max-width:820px;max-height:90vh;max-height:90dvh;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;border-radius:20px 20px 0 0;padding:24px 18px 28px;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+.modal-box:focus{outline:none}
+.modal-box h2{font-size:clamp(1.5rem,5.5vw,2rem);margin-right:52px}
+.modal-box .know-grid{margin-top:18px;gap:16px}
+.modal-box .panel{padding:22px 18px}
+.modal-close{position:sticky;top:0;float:right;z-index:1;width:44px;height:44px;margin:-6px -4px 0 8px;border-radius:50%;display:grid;place-items:center;background:var(--grey-xl);color:var(--grey-d);text-decoration:none;font:400 1.7rem/1 var(--font-body)}
+.modal-close:hover{background:var(--grey-l)}
+.modal-actions{margin-top:20px}
+.modal-actions .btn{width:100%}
+html.modal-open,html.modal-open body{overflow:hidden}
+@media (min-width:640px){
+  .modal{align-items:center;padding:24px}
+  .modal-box{border-radius:20px;padding:36px 36px 32px}
+  .modal-actions .btn{width:auto;min-width:200px}
+}
+
+/* FAQ page */
+.faq-page{padding-top:40px}
+.faq-page h1{font-size:clamp(2rem,6vw,2.8rem);margin-bottom:.4em}
+.faq-page .intro{max-width:62ch}
+.back{margin:0 0 18px}
+.back a{display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-underline-offset:4px}
+.faq-page .faq-h{font-family:var(--font-head);font-weight:700;line-height:1.15}
+.faq-cta{max-width:820px;margin-top:48px;background:var(--surf);border-radius:var(--radius);padding:28px 22px;border-top:6px solid var(--brand)}
+.faq-cta h2{font-size:1.5rem}
+.faq-cta .cta-row{margin-top:18px}
+@media (max-width:560px){.faq-cta .cta-row .btn{width:100%}}
+nav.primary a[aria-current="page"]{color:var(--brand-500);text-decoration:underline;text-underline-offset:6px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Homestead Support, home">
+      <img src="assets/logo.svg" alt="" width="44" height="44">
+      <span>Homestead Support</span>
+    </a>
+    <input type="checkbox" id="navToggle" class="nav-toggle" tabindex="-1" aria-hidden="true">
+    <label class="menu-btn" id="menuBtn" for="navToggle" role="button" tabindex="0" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span class="bl"></span><span class="bl"></span><span class="bl"></span></label>
+    <nav class="primary" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html#who">Who we are</a></li>
+        <li><a href="index.html#cook">Meet your cook</a></li>
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="faq.html" aria-current="page">FAQs</a></li>
+        <li><a class="btn btn-cta" id="navContact" href="mailto:hi@homesteadsupport.com.au">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="faqs" class="faq-page">
+    <div class="wrap">
+      <p class="back"><a href="index.html">Back to home</a></p>
+      <p class="eyebrow">FAQs</p>
+      <h1>Questions families ask us.</h1>
+      <p class="intro">Can't find your answer? Email us at <a class="mailLink" href="#">our team</a>, or ask us to call you back.</p>
+      <div class="faq">
+      <h2 class="faq-h">About Homestead</h2>
+<details>
+          <summary>What is Homestead Support?</summary>
+          <div class="ans"><p>We're a small Melbourne business. Your cook comes to your home, or your parent's, and cooks the food you love in your own kitchen, the way you like it.</p></div>
+        </details>
+<details>
+          <summary>Is this a meal delivery service?</summary>
+          <div class="ans"><p>No. Your cook makes fresh meals in your kitchen, stores the extras and tidies up. It can sit alongside meal delivery if you already use one.</p></div>
+        </details>
+<details>
+          <summary>Who is Homestead for?</summary>
+          <div class="ans"><p>Older Australians who want to keep enjoying home cooking from their own culture, in their own kitchen, and the families who help arrange it.</p></div>
+        </details>
+<details>
+          <summary>Where do you work?</summary>
+          <div class="ans"><p>Melbourne's north-east, in Banyule and Nillumbik, including Greensborough and Eltham. Somewhere else? Tell us your suburb. We can't promise, but we'd love to know where families need us.</p></div>
+        </details>
+      <h2 class="faq-h">Food, shopping and meals</h2>
+<details>
+          <summary>Which cuisines do you cook?</summary>
+          <div class="ans"><p>Right now: Modern Australian, Italian, French, Greek and Korean. If your family's food isn't on the list, tell us what they love and we'll talk it through honestly.</p></div>
+        </details>
+<details>
+          <summary>Can the cook make my parent's own recipes?</summary>
+          <div class="ans"><p>Yes, if they'd like. Your parent chooses the dishes and can show the cook how they like them, or just describe the taste they remember.</p></div>
+        </details>
+<details>
+          <summary>Can you cook for special diets?</summary>
+          <div class="ans"><p>We can cook vegetarian, salt-reduced and gluten-free dishes. We currently can't cook for serious or life-threatening allergies, coeliac-level gluten-free diets, medical diets, or texture and swallowing needs. Tell us what your parent likes, and we'll talk it through at the meet and greet.</p></div>
+        </details>
+<details>
+          <summary>Who buys the groceries?</summary>
+          <div class="ans"><p>You choose and buy the groceries, and we'll send you a shopping list to make it easy. That way, the $200 is all you pay us.</p></div>
+        </details>
+<details>
+          <summary>What about the meals in the fridge?</summary>
+          <div class="ans"><p>Fridge meals are best eaten within about 3 days, and the rest can go in the freezer. Your cook leaves a note on how to store them.</p></div>
+        </details>
+<details>
+          <summary>Can you help organise the fridge, freezer and pantry?</summary>
+          <div class="ans"><p>Not in the Launch Offer, but you can ask for it later. It needs planning ahead, so mention it when you book or ask for a call back.</p></div>
+        </details>
+      <h2 class="faq-h">Our cooks, cost and contracts</h2>
+<details>
+          <summary>How are your cooks checked?</summary>
+          <div class="ans"><p>Every Homestead cook is experienced in the kitchen, with food safety training and a current NDIS Worker Screening Check.</p></div>
+        </details>
+<details>
+          <summary>What happens after the Launch Offer, and what does it cost?</summary>
+          <div class="ans"><p>Just tell us if you'd like to continue. We'll talk about what suits your parent and price it to match.</p></div>
+        </details>
+<details>
+          <summary>Is there a contract? Do I need to cancel?</summary>
+          <div class="ans"><p>No. There's no lock-in contract, so there's nothing to cancel.</p></div>
+        </details>
+<details>
+          <summary>Can I use Support at Home, CHSP or NDIS funding, and do we need an aged care package?</summary>
+          <div class="ans"><p>Not yet. We're a private service, so we can't currently bill Support at Home, CHSP or NDIS budgets. That also means you don't need an aged care package or assessment to book.</p><p>To explore government support, start with My Aged Care on 1800 200 422 or <a href="https://www.myagedcare.gov.au" target="_blank" rel="noopener noreferrer">myagedcare.gov.au</a>.</p><p><a id="notifyLink" href="#">Let me know when you can work with my parent's package</a></p></div>
+        </details>
+      </div>
+      <div class="faq-cta">
+        <h2>Still have a question?</h2>
+        <p>We're happy to talk it through.</p>
+        <div class="cta-row">
+          <a class="btn btn-cta" href="index.html#contact">Book the Launch Offer</a>
+          <a class="btn btn-ghost" href="index.html#callback">Request a call back</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="index.html"><span class="disc"><img src="assets/logo.svg" alt="" width="42" height="42"></span><span>Homestead Support</span></a>
+        <p style="margin-top:14px;max-width:44ch">Cooking familiar food in your own kitchen.</p>
+        <p style="margin-top:10px;max-width:60ch;font-size:.95rem">ABN 39 856 096 960 &middot; Melbourne, Victoria</p>
+        <p style="margin-top:6px;max-width:60ch;font-size:.95rem">Public liability insurance with <a href="https://www.relyoninsurance.com.au/" rel="noopener">RelyOn Insurance</a></p>
+        <p style="margin-top:6px;max-width:60ch;font-size:.95rem">Our services come with consumer guarantees under the Australian Consumer Law that can't be excluded.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="index.html#who">Who we are</a></li>
+            <li><a href="index.html#cook">Meet your cook</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#before-you-book">Before you book</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Notice</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="fine">&copy; <span id="yr">2026</span> Homestead Support.</p>
+  </div>
+</footer>
+
+<script>
+var CONTACT_EMAIL = "hi@homesteadsupport.com.au";
+(function () {
+  var d = document;
+  d.documentElement.classList.add("js");
+  d.getElementById("yr").textContent = new Date().getFullYear();
+  d.getElementById("navContact").href = "mailto:" + CONTACT_EMAIL;
+  d.querySelectorAll(".mailLink").forEach(function (a) { a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
+  var nl = d.getElementById("notifyLink");
+  if (nl) nl.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Let me know when you can work with my parent's package") + "&body=" + encodeURIComponent("Please let me know when Homestead can work with my parent's funding package.\n\nName:\nSuburb:");
+
+  // Mobile menu: the hidden checkbox opens it (works even if this script is slow or blocked); this keeps it tidy
+  var btn = d.getElementById("menuBtn"), nav = d.getElementById("nav"), toggle = d.getElementById("navToggle");
+  function setOpen(o) { toggle.checked = o; btn.setAttribute("aria-expanded", o ? "true" : "false"); }
+  toggle.addEventListener("change", function () { setOpen(toggle.checked); });
+  btn.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setOpen(!toggle.checked); }
+  });
+  nav.addEventListener("click", function (e) { if (e.target.closest("a")) setOpen(false); });
+  d.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+  d.addEventListener("click", function (e) { if (toggle.checked && !e.target.closest("header.site")) setOpen(false); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 1000) setOpen(false); });
+
+  // Sticky header (phones and tablets): slides away when scrolling down, comes back as soon as you scroll up
+  var header = d.querySelector("header.site"), mq = window.matchMedia("(max-width:1000px)"), lastY = window.scrollY, ticking = false;
+  function showHeader() { header.classList.remove("is-hidden"); }
+  function onScroll() {
+    ticking = false;
+    var y = window.scrollY, dy = y - lastY;
+    if (!mq.matches || toggle.checked || y < 80) { showHeader(); lastY = y; return; }
+    if (Math.abs(dy) < 6) return;
+    if (dy > 0) header.classList.add("is-hidden"); else showHeader();
+    lastY = y;
+  }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); } }, { passive: true });
+  toggle.addEventListener("change", showHeader);
+  header.addEventListener("focusin", showHeader);
+  mq.addEventListener ? mq.addEventListener("change", showHeader) : mq.addListener(showHeader);
+
+})();
+</script>
+</body>
+</html>
