@@ -435,6 +435,25 @@ html.modal-open,html.modal-open body{overflow:hidden}
   .modal-box{border-radius:20px;padding:36px 36px 32px}
   .modal-actions .btn{width:auto;min-width:200px}
 }
+
+/* ---- Round 7: one enquiry form with tick boxes ---- */
+#ft-enquiry:checked ~ #panel-enquiry{display:grid}
+#ft-enquiry:checked ~ .tabs label[for="ft-enquiry"]{background:var(--surf);color:var(--grey-d)}
+#ft-enquiry:focus-visible ~ .tabs label[for="ft-enquiry"]{outline:3px solid var(--secondary);outline-offset:-3px}
+.enquiry fieldset{border:0;margin:0;padding:0;min-width:0}
+.enquiry legend{font-weight:500;font-size:.95rem;padding:0;margin:0 0 8px}
+.choice-list{display:grid;gap:8px}
+.choice{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--grey-l);border-radius:10px;padding:10px 14px;min-height:52px;cursor:pointer;font-weight:400;font-size:1rem;-webkit-tap-highlight-color:transparent}
+.choice input{width:22px;height:22px;min-height:22px;padding:0;margin:0;flex:none;accent-color:var(--secondary)}
+.choice:has(input:checked){border-color:var(--secondary);background:var(--secondary-l)}
+.choice:has(input:focus-visible){outline:3px solid var(--secondary);outline-offset:2px}
+.choice-list.two{grid-template-columns:1fr 1fr}
+.field-err{margin:8px 0 0;color:#B42318;font-weight:500;font-size:.95rem}
+.field-err[hidden]{display:none}
+
+/* ---- Section order: hero, who we are, who it's for, Launch Offer, meet your cook ---- */
+#for{background:var(--grey-xl);--bg:var(--grey-xl);--surf:#fff}
+#how{background:#fff;--bg:#fff;--surf:var(--grey-xl)}
 </style>
 </head>
 <body>
@@ -452,10 +471,11 @@ html.modal-open,html.modal-open body{overflow:hidden}
     <nav class="primary" id="nav" aria-label="Main">
       <ul>
         <li><a href="#who">Who we are</a></li>
-        <li><a href="#cook">Meet your cook</a></li>
         <li><a href="#how">How it works</a></li>
+        <li><a href="#cook">Meet your cook</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="faq.html">FAQs</a></li>
-        <li><a class="btn btn-cta" id="navContact" href="mailto:hi@homesteadsupport.com.au">Contact us</a></li>
+        <li><a class="btn btn-cta" id="navContact" href="contact.html?tab=enquiry">Contact us</a></li>
       </ul>
     </nav>
   </div>
@@ -470,8 +490,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
         <h1>Fresh home cooking, <em>the way you like it.</em></h1>
         <p class="lead">The kitchen is the heart of the home. We're there to keep that heart warm.</p>
         <div class="actions">
-          <a class="btn btn-cta" href="#contact" data-form="trial">Book the Launch Offer</a>
-          <a class="btn btn-ghost" href="#contact" data-form="callback">Request a call back</a>
+          <a class="btn btn-cta" href="contact.html">Book the Launch Offer</a>
         </div>
         <p class="note">Starting in Melbourne's north-east: Banyule, Nillumbik and nearby suburbs.</p>
       </div>
@@ -503,34 +522,6 @@ html.modal-open,html.modal-open body{overflow:hidden}
     </div>
   </section>
 
-  <!-- MEET YOUR COOK -->
-  <section id="cook">
-    <div class="wrap cook-grid">
-      <figure class="cook-photo">
-        <img src="assets/cook-inyoung.jpg" alt="Inyoung, smiling, in a chef's jacket and apron in a kitchen" width="900" height="900">
-        <figcaption>Inyoung, your cook</figcaption>
-      </figure>
-      <div class="cook-body">
-        <p class="eyebrow">Meet your cook</p>
-        <h2>Hi, I'm Inyoung. I'll be the one in your kitchen.</h2>
-        <p>I've spent seven years cooking in professional kitchens, including as Sous Chef at Gilbert Street Hotel. I'm a qualified chef, and cooking for people is still my favourite thing to do.</p>
-        <p>A while ago I went home to South Korea to see my parents, and joined them for Kimjang. That's when the family gets together to make a winter's worth of kimchi. Mum and Dad are in their 80s now. They love their home and they love their food, but doing it all themselves takes a lot more out of them these days. <!-- CONFIRM WITH MUM before publishing: the line about this possibly being their last Kimjang. --> Mum told me this might be their last Kimjang.</p>
-        <p>That stayed with me. I wanted them to keep enjoying the food they've always loved, right there in their own kitchen. And I knew lots of families here would want the same for their mum or dad.</p>
-        <p>So I started Homestead Support. I'm also a service designer, which really just means I listen first. Then I keep making things better based on what each family tells me.</p>
-        <ul class="chips cook-chips" aria-label="Qualifications and checks">
-          <li>Qualified chef (TAFE SA)</li>
-          <li>Food safety trained</li>
-          <li>NDIS Worker Screening Check</li>
-          <li>Public liability insurance</li>
-          <li class="more">Available on request</li>
-        </ul>
-        <p class="cook-note">I'm a cook, not a dietitian or nurse, so I follow your parent's health professional's advice.</p>
-        <p class="cook-note">Past kitchens in Adelaide and Perth: Gilbert Street Hotel, Goodine Bistro, The Wharf, The Lion Hotel, The Bayswater Hotel and Hotel Northbridge.</p>
-        <div class="cta-row"><a class="btn btn-ghost" href="#contact" data-form="callback">Request a call back</a></div>
-      </div>
-    </div>
-  </section>
-
   <!-- WHO IT'S FOR -->
   <section id="for">
     <div class="wrap">
@@ -553,6 +544,7 @@ html.modal-open,html.modal-open body{overflow:hidden}
           <p>Right now we cook Modern Australian, Italian, French, Greek and Korean. Something else? Let's talk about what they love.</p>
         </article>
       </div>
+      <p class="more-faq"><a href="services.html">Three ways to cook with us</a></p>
     </div>
   </section>
 
@@ -582,159 +574,41 @@ html.modal-open,html.modal-open body{overflow:hidden}
         <p class="spots-line"><strong>Weekdays only</strong></p>
         <p class="small">You buy the groceries, so this is all you pay us.</p>
         <div class="price-actions">
-          <a class="btn btn-cta" href="#contact" data-form="trial">Book the Launch Offer</a>
-          <a class="btn btn-ghost" href="#contact" data-form="callback">Request a call back</a>
+          <a class="btn btn-cta" href="contact.html">Book the Launch Offer</a>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap contact-grid">
-      <div class="contact-aside">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Let's start with a conversation.</h2>
-        <p>Ready? Book the Launch Offer. <span class="spots-line-inline"><span class="spots">Limited to our first 10 households</span>, weekdays only.</span> Not sure yet? Ask us to call you back.</p>
-        <p>We'll get back to you within a couple of working days.</p>
-        <p>Prefer email? Write to <a id="emailLink" href="#">our team</a>.</p>
-        <a class="know-card" href="#before-you-book" aria-haspopup="dialog">
-          <span class="kicker">Before you book</span>
-          <span class="k-title">What we do, and what we don't</span>
-          <span class="k-text">We currently can't cook for serious or life-threatening allergies, coeliac-level gluten-free diets, medical diets, or texture and swallowing needs.</span>
-          <span class="k-more">Read before you book</span>
-        </a>
-      </div>
-
-      <div class="forms">
-        <span id="callback" class="anchor"></span>
-        <input type="radio" name="formtab" id="ft-trial" class="tab-radio" checked>
-        <input type="radio" name="formtab" id="ft-callback" class="tab-radio">
-        <div class="tabs" role="group" aria-label="Choose how to get in touch">
-          <label class="tab" id="tab-trial" for="ft-trial">Book the Launch Offer</label>
-          <label class="tab" id="tab-callback" for="ft-callback">Request a call back</label>
-        </div>
-
-        <!-- Book the Launch Offer -->
-        <form class="enquiry" id="panel-trial" aria-labelledby="tab-trial" data-subject="Homestead Launch Offer booking" action="mailto:hi@homesteadsupport.com.au?subject=Homestead%20Launch%20Offer%20booking" method="post" enctype="text/plain">
-          <div class="field">
-            <label for="t-name">Your name</label>
-            <input id="t-name" name="Name" type="text" autocomplete="name" enterkeyhint="next" required>
-          </div>
-          <div class="field">
-            <label for="t-email">Email</label>
-            <input id="t-email" name="Email" type="email" inputmode="email" autocomplete="email" enterkeyhint="next" required>
-          </div>
-          <div class="field">
-            <label for="t-phone">Phone</label>
-            <input id="t-phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" required>
-          </div>
-          <div class="field">
-            <label for="t-suburb">Suburb</label>
-            <input id="t-suburb" name="Suburb" type="text" autocomplete="address-level2" enterkeyhint="next" required>
-          </div>
-          <div class="field full">
-            <label for="t-who">Who is the Launch Offer for?</label>
-            <select id="t-who" name="Launch Offer is for" required>
-              <option value="" disabled selected>Please choose</option>
-              <option>My mum or dad</option>
-              <option>Me</option>
-              <option>Another family member</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="t-food">The food they love and their language</label>
-            <input id="t-food" name="Food and language" type="text" placeholder="e.g. Italian, speaks Italian" required>
-          </div>
-          <div class="field full">
-            <label for="t-msg">Anything else we should know? <span class="opt">(optional)</span></label>
-            <textarea id="t-msg" name="Message"></textarea>
-          </div>
-          <div class="field hp" aria-hidden="true">
-            <label for="t-web">Leave this field empty</label>
-            <input id="t-web" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="field full check">
-            <input id="t-allergy" name="consent" type="checkbox" required>
-            <label for="t-allergy">I will tell Homestead about all allergies, intolerances and texture needs before the first visit. I understand I choose and buy the groceries and that a home kitchen can't be made allergen-free.</label>
-          </div>
-          <div class="field full check">
-            <input id="t-consent" name="consent" type="checkbox" required>
-            <label for="t-consent">I agree to Homestead Support using these details to reply to my request. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a>.</label>
-          </div>
-          <div class="field full">
-            <button class="btn btn-cta" type="submit">Book the Launch Offer</button>
-          </div>
-          <p class="status" role="status" aria-live="polite" hidden></p>
-        </form>
-
-        <!-- Request a call back -->
-        <form class="enquiry" id="panel-callback" aria-labelledby="tab-callback" data-subject="Homestead call back request" action="mailto:hi@homesteadsupport.com.au?subject=Homestead%20call%20back%20request" method="post" enctype="text/plain">
-          <div class="field">
-            <label for="c-name">Your name</label>
-            <input id="c-name" name="Name" type="text" autocomplete="name" enterkeyhint="next" required>
-          </div>
-          <div class="field">
-            <label for="c-phone">Phone</label>
-            <input id="c-phone" name="Phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" required>
-          </div>
-          <div class="field full">
-            <label for="c-time">Best time to call</label>
-            <select id="c-time" name="Best time to call" required>
-              <option value="" disabled selected>Please choose</option>
-              <option>Morning</option>
-              <option>Afternoon</option>
-              <option>Evening</option>
-              <option>Any time</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label for="c-msg">Anything you'd like to ask us? <span class="opt">(optional)</span></label>
-            <textarea id="c-msg" name="Message"></textarea>
-          </div>
-          <div class="field hp" aria-hidden="true">
-            <label for="c-web">Leave this field empty</label>
-            <input id="c-web" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="field full check">
-            <input id="c-consent" name="consent" type="checkbox" required>
-            <label for="c-consent">I agree to Homestead Support using these details to call me back. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a>.</label>
-          </div>
-          <div class="field full">
-            <button class="btn btn-cta" type="submit">Request a call back</button>
-          </div>
-          <p class="status" role="status" aria-live="polite" hidden></p>
-        </form>
+  <!-- MEET YOUR COOK -->
+  <section id="cook">
+    <div class="wrap cook-grid">
+      <figure class="cook-photo">
+        <img src="assets/cook-inyoung.jpg" alt="Inyoung, smiling, in a chef's jacket and apron in a kitchen" width="900" height="900">
+        <figcaption>Inyoung, your cook</figcaption>
+      </figure>
+      <div class="cook-body">
+        <p class="eyebrow">Meet your cook</p>
+        <h2>Hi, I'm Inyoung. I'll be the one in your kitchen.</h2>
+        <p>I've spent seven years cooking in professional kitchens, including as Sous Chef at Gilbert Street Hotel. I'm a qualified chef, and cooking for people is still my favourite thing to do.</p>
+        <p>A while ago I went home to South Korea to see my parents, and joined them for Kimjang. That's when the family gets together to make a winter's worth of kimchi. Mum and Dad are in their 80s now. They love their home and they love their food, but doing it all themselves takes a lot more out of them these days. <!-- CONFIRM WITH MUM before publishing: the line about this possibly being their last Kimjang. --> Mum told me this might be their last Kimjang.</p>
+        <p>That stayed with me. I wanted them to keep enjoying the food they've always loved, right there in their own kitchen. And I knew lots of families here would want the same for their mum or dad.</p>
+        <p>So I started Homestead Support. I'm also a service designer, which really just means I listen first. Then I keep making things better based on what each family tells me.</p>
+        <ul class="chips cook-chips" aria-label="Qualifications and checks">
+          <li>Qualified chef (TAFE SA)</li>
+          <li>Food safety trained</li>
+          <li>NDIS Worker Screening Check</li>
+          <li>Public liability insurance</li>
+          <li class="more">Available on request</li>
+        </ul>
+        <p class="cook-note">I'm a cook, not a dietitian or nurse, so I follow your parent's health professional's advice.</p>
+        <p class="cook-note">Past kitchens in Adelaide and Perth: Gilbert Street Hotel, Goodine Bistro, The Wharf, The Lion Hotel, The Bayswater Hotel and Hotel Northbridge.</p>
       </div>
     </div>
   </section>
+
 </main>
 
-<!-- BEFORE YOU BOOK: pop-up. Opens from the card in Get in touch and the footer link. Works without scripts too. -->
-<div class="modal" id="before-you-book" role="dialog" aria-modal="true" aria-labelledby="byb-title">
-  <a class="modal-backdrop" href="#contact" data-close tabindex="-1" aria-hidden="true"></a>
-  <div class="modal-box" tabindex="-1">
-    <a class="modal-close" href="#contact" data-close aria-label="Close">&times;</a>
-    <p class="eyebrow">Before you book</p>
-    <h2 id="byb-title">What we do, and what we don't.</h2>
-    <div class="know-grid">
-        <div class="panel">
-          <h3>We cook</h3>
-          <p>We cook meals in your home with groceries you choose and buy.</p>
-          <p>We're not a registered aged care provider, nursing service or dietitian. We don't help with showering, dressing, toileting, moving around or medications, and we don't give medical or nutrition advice.</p>
-          <p>We currently can't cook for medical diets or swallowing needs. For that kind of support, your parent's GP or aged care provider is the best place to start.</p>
-        </div>
-        <div class="panel alt">
-          <h3>Allergies and dietary needs</h3>
-          <p>Cooking safely around allergies takes both of us.</p>
-          <p><strong>What you do:</strong> Tell us about every allergy, intolerance and texture need before the first visit, and if anything changes. You buy the groceries, so please check labels against your parent's list.</p>
-          <p><strong>What we do:</strong> We ask again at every visit, read labels on what's in the kitchen, and stop and tell you if something doesn't look right.</p>
-          <p><strong>What we can't promise:</strong> A home kitchen can't be made allergen-free. We currently can't cook for serious or life-threatening allergies, such as one that has caused anaphylaxis. Unsure? Email Inyoung before you book at <a class="mailLink" href="#">our team</a>.</p>
-        </div>
-      </div>
-    <div class="modal-actions"><a class="btn btn-ghost" href="#contact" data-close>Close</a></div>
-  </div>
-</div>
 
 <footer>
   <div class="wrap">
@@ -749,11 +623,12 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <nav aria-label="Footer">
         <ul>
           <li><a href="#who">Who we are</a></li>
-            <li><a href="#cook">Meet your cook</a></li>
             <li><a href="#how">How it works</a></li>
-          <li><a href="#before-you-book">Before you book</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="#contact">Contact</a></li>
+            <li><a href="#cook">Meet your cook</a></li>
+          <li><a href="contact.html#before-you-book">Before you book</a></li>
+          <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html?tab=enquiry">Contact</a></li>
           <li><a href="privacy.html">Privacy Notice</a></li>
         </ul>
       </nav>
@@ -765,22 +640,14 @@ html.modal-open,html.modal-open body{overflow:hidden}
 <script>
 /* ---- SETTINGS: change these before you publish ---- */
 var CONTACT_EMAIL = "hi@homesteadsupport.com.au";
-var SPOTS_LEFT = 10;   /* Launch Offer spots still available (0 to 10). Update by hand. */
+var SPOTS_LEFT = 10;   /* Launch Offer spots still available (0 to 10). Update by hand, here and in contact.html. */
 /* --------------------------------------------------- */
 
 (function () {
   var d = document;
   d.documentElement.classList.add("js");
   d.getElementById("yr").textContent = new Date().getFullYear();
-
-  // Email link
-  var el = d.getElementById("emailLink");
-  el.href = "mailto:" + CONTACT_EMAIL;
-  el.textContent = CONTACT_EMAIL;
-  d.getElementById("navContact").href = "mailto:" + CONTACT_EMAIL;
   d.querySelectorAll(".mailLink").forEach(function (a) { a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
-  var nl = d.getElementById("notifyLink");
-  if (nl) nl.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Let me know when you can work with my parent's package") + "&body=" + encodeURIComponent("Please let me know when Homestead can work with my parent's funding package.\n\nName:\nSuburb:");
 
   // Launch Offer spots text
   var spotsText = SPOTS_LEFT >= 10 ? "Limited to our first 10 households"
@@ -816,67 +683,6 @@ var SPOTS_LEFT = 10;   /* Launch Offer spots still available (0 to 10). Update b
   header.addEventListener("focusin", showHeader);
   mq.addEventListener ? mq.addEventListener("change", showHeader) : mq.addListener(showHeader);
 
-  // Form tabs: the radio buttons switch the forms; these buttons around the page just pick the right one
-  var panels = { trial: d.getElementById("panel-trial"), callback: d.getElementById("panel-callback") };
-  d.querySelectorAll("[data-form]").forEach(function (a) {
-    a.addEventListener("click", function () { var r = d.getElementById("ft-" + a.getAttribute("data-form")); if (r) r.checked = true; });
-  });
-
-  // Arriving from the FAQ page's "Request a call back" link
-  if (location.hash === "#callback") { var cb = d.getElementById("ft-callback"); if (cb) cb.checked = true; }
-
-  // Before you book: pop-up
-  var modal = d.getElementById("before-you-book"), box = modal.querySelector(".modal-box"), lastFocus = null;
-  function openModal(e) {
-    if (e) e.preventDefault();
-    lastFocus = d.activeElement;
-    modal.classList.add("open");
-    d.documentElement.classList.add("modal-open");
-    box.focus();
-  }
-  function closeModal(e) {
-    if (e) e.preventDefault();
-    modal.classList.remove("open");
-    d.documentElement.classList.remove("modal-open");
-    if (location.hash === "#before-you-book") { try { history.replaceState(null, "", location.pathname + location.search); } catch (x) {} }
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-  d.querySelectorAll('a[href="#before-you-book"]').forEach(function (a) { a.addEventListener("click", openModal); });
-  modal.querySelectorAll("[data-close]").forEach(function (a) { a.addEventListener("click", closeModal); });
-  d.addEventListener("keydown", function (e) {
-    if (!modal.classList.contains("open")) return;
-    if (e.key === "Escape") { closeModal(); return; }
-    if (e.key === "Tab") {
-      var f = [].slice.call(box.querySelectorAll("a[href],button")).filter(function (n) { return n.offsetParent !== null; });
-      if (!f.length) return;
-      if (e.shiftKey && (d.activeElement === f[0] || d.activeElement === box)) { e.preventDefault(); f[f.length - 1].focus(); }
-      else if (!e.shiftKey && d.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
-    }
-  });
-  if (location.hash === "#before-you-book") openModal();
-
-  // Forms: open the visitor's email app with the details filled in
-  function wire(form) {
-    var status = form.querySelector(".status");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      status.hidden = true;
-      if (form.elements.website.value) return; // spam trap
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var lines = [];
-      Array.prototype.forEach.call(form.elements, function (f) {
-        if (!f.name || f.name === "website" || f.name === "consent" || f.type === "submit" || f.tagName === "BUTTON") return;
-        if (f.value) lines.push(f.name + ": " + f.value);
-      });
-      var subject = form.getAttribute("data-subject");
-      window.location.href = "mailto:" + CONTACT_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(lines.join("\n"));
-      status.textContent = "Thank you. Your email app should now open with your details ready to send. If it doesn't, please email us at " + CONTACT_EMAIL + ".";
-      status.hidden = false;
-    });
-  }
-  wire(panels.trial); wire(panels.callback);
 })();
 </script>
 </body>

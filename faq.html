@@ -464,10 +464,11 @@ nav.primary a[aria-current="page"]{color:var(--brand-500);text-decoration:underl
     <nav class="primary" id="nav" aria-label="Main">
       <ul>
         <li><a href="index.html#who">Who we are</a></li>
-        <li><a href="index.html#cook">Meet your cook</a></li>
         <li><a href="index.html#how">How it works</a></li>
+        <li><a href="index.html#cook">Meet your cook</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="faq.html" aria-current="page">FAQs</a></li>
-        <li><a class="btn btn-cta" id="navContact" href="mailto:hi@homesteadsupport.com.au">Contact us</a></li>
+        <li><a class="btn btn-cta" id="navContact" href="contact.html?tab=enquiry">Contact us</a></li>
       </ul>
     </nav>
   </div>
@@ -545,8 +546,7 @@ nav.primary a[aria-current="page"]{color:var(--brand-500);text-decoration:underl
         <h2>Still have a question?</h2>
         <p>We're happy to talk it through.</p>
         <div class="cta-row">
-          <a class="btn btn-cta" href="index.html#contact">Book the Launch Offer</a>
-          <a class="btn btn-ghost" href="index.html#callback">Request a call back</a>
+          <a class="btn btn-cta" href="contact.html?tab=enquiry">Get in touch</a>
         </div>
       </div>
     </div>
@@ -566,11 +566,12 @@ nav.primary a[aria-current="page"]{color:var(--brand-500);text-decoration:underl
       <nav aria-label="Footer">
         <ul>
           <li><a href="index.html#who">Who we are</a></li>
-            <li><a href="index.html#cook">Meet your cook</a></li>
             <li><a href="index.html#how">How it works</a></li>
-          <li><a href="index.html#before-you-book">Before you book</a></li>
+            <li><a href="index.html#cook">Meet your cook</a></li>
+          <li><a href="contact.html#before-you-book">Before you book</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="faq.html">FAQs</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="contact.html?tab=enquiry">Contact</a></li>
           <li><a href="privacy.html">Privacy Notice</a></li>
         </ul>
       </nav>
@@ -585,7 +586,6 @@ var CONTACT_EMAIL = "hi@homesteadsupport.com.au";
   var d = document;
   d.documentElement.classList.add("js");
   d.getElementById("yr").textContent = new Date().getFullYear();
-  d.getElementById("navContact").href = "mailto:" + CONTACT_EMAIL;
   d.querySelectorAll(".mailLink").forEach(function (a) { a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
   var nl = d.getElementById("notifyLink");
   if (nl) nl.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Let me know when you can work with my parent's package") + "&body=" + encodeURIComponent("Please let me know when Homestead can work with my parent's funding package.\n\nName:\nSuburb:");
