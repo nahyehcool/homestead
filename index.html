@@ -454,6 +454,18 @@ html.modal-open,html.modal-open body{overflow:hidden}
 /* ---- Section order: hero, who we are, who it's for, Launch Offer, meet your cook ---- */
 #for{background:var(--grey-xl);--bg:var(--grey-xl);--surf:#fff}
 #how{background:#fff;--bg:#fff;--surf:var(--grey-xl)}
+
+/* ---- Launch Offer card: a family meal at Mum and Dad's ---- */
+.offer-card .offer-title{font-size:1.45rem;margin:2px 0 10px}
+.offer-card .price{font-size:3.4rem;margin:4px 0 2px}
+.offer-card .price-when{font:600 1.05rem/1 var(--font-head);color:var(--grey-d)}
+.offer-card .price-alt{font:600 1.1rem/1.4 var(--font-head);margin:0 0 16px;color:var(--grey-d)}
+.offer-card .offer-intro{margin:0 0 16px;color:#4a4a47;text-align:left}
+.offer-list{list-style:none;margin:0 0 18px;padding:0;text-align:left;display:grid;gap:10px}
+.offer-list li{position:relative;padding-left:30px;line-height:1.5;color:var(--grey-d)}
+.offer-list li::before{content:"";position:absolute;left:2px;top:.28em;width:18px;height:18px;border-radius:50%;background:var(--brand-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.2l2.6 2.6L13 6.4' fill='none' stroke='%23005865' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+.offer-card .spots-line{margin:0 0 16px}
+@media (min-width:901px){.offer-card{position:sticky;top:96px}}
 </style>
 </head>
 <body>
@@ -493,12 +505,13 @@ html.modal-open,html.modal-open body{overflow:hidden}
         </div>
         <p class="note">Starting in Melbourne's north-east: Banyule, Nillumbik and nearby suburbs.</p>
       </div>
-      <a class="hero-art" href="#how" aria-label="Learn more about the Launch Offer: $200 for 2 hours of cooking with a complimentary meet and greet. Limited to our first 10 households. Weekdays only">
+      <a class="hero-art" href="#how" aria-label="Learn more about the Launch Offer, a family meal at Mum and Dad's: $200 on weekdays, $250 on Saturdays. Limited to our first 10 households">
         <div class="card">
           <p class="kicker">Launch Offer</p>
+          <p class="card-line">A family meal at Mum and Dad's</p>
           <p class="price-sm">$200</p>
-          <p class="card-line">2 hours of cooking with a complimentary meet and greet</p>
-          <p class="card-line small"><span class="spots">Limited to our first 10 households</span><br>Weekdays only</p>
+          <p class="card-line small">on weekdays, $250 on Saturdays</p>
+          <p class="card-line small"><span class="spots">Limited to our first 10 households</span></p>
           <span class="btn btn-ghost" aria-hidden="true">Learn more</span>
         </div>
       </a>
@@ -553,25 +566,29 @@ html.modal-open,html.modal-open body{overflow:hidden}
       <div>
         <p class="eyebrow">Our Launch Offer</p>
         <h2>How your Launch Offer works.</h2>
-        <p class="lead">We're just starting out, so our first 10 households get the Launch Offer for $200.</p>
+        <p class="lead">We're just starting out, so our first 10 households get a special Launch Offer.</p>
         <ol class="steps">
           <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><div><h3>We phone you</h3><p>Book, or ask for a call back, and we'll phone you to talk it through.</p></div></li>
           <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><div><h3>Complimentary meet and greet, at home or by video</h3><p>We start with a friendly chat about what your mum or dad likes to eat, and what would make cooking easier. Meet by video and show us the kitchen if you like, or we can visit. Nothing booked, nothing owed.</p></div></li>
-          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span><div><h3>Choose the menu</h3><p>We send a few menus, the way you like to be contacted. You and your parent pick a favourite.</p></div></li>
-          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l4-6 4 6"/></svg></span><div><h3>Sort the groceries</h3><p>You buy the groceries from our shopping list, so $200 is all you pay us.</p></div></li>
-          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7z"/><path d="M2 11h20"/><path d="M8 7c0-1.5 1-2 1-3M12 7c0-1.5 1-2 1-3M16 7c0-1.5 1-2 1-3"/></svg></span><div><h3>Cooking day</h3><p>Your cook comes on a weekday for 2 hours, cooks the way you like it, and tidies up.</p></div></li>
-          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20H6z"/><path d="M6 10h12M9 5v2M9 13v3"/></svg></span><div><h3>Menu and number of meals</h3><p>Between 2 and 8 meals, depending on the menu. Store them or share them, with a note on how to keep them.</p></div></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span><div><h3>Choose the menu</h3><p>Tell us what you'd like us to cook, or we'll send a few menus, the way you like to be contacted. You and your parent pick a favourite.</p></div></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l4-6 4 6"/></svg></span><div><h3>Groceries delivered</h3><p>We prepare your Woolworths order for the menu. You approve it, and it's delivered before cooking day.</p></div></li>
+          <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7z"/><path d="M2 11h20"/><path d="M8 7c0-1.5 1-2 1-3M12 7c0-1.5 1-2 1-3M16 7c0-1.5 1-2 1-3"/></svg></span><div><h3>Cooking day</h3><p>Your cook comes for 2 hours and cooks the way your family likes, with you guiding as much or as little as you like. Then we tidy up.</p></div></li>
           <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/></svg></span><div><h3>Your feedback</h3><p>Tell us what worked, what didn't and what you'd change. It helps us get this right for you and every family after you.</p></div></li>
         </ol>
         <p class="more-faq"><a href="faq.html">More frequently asked questions</a></p>
       </div>
-      <aside class="price-card" aria-label="Launch Offer price">
+      <aside class="price-card offer-card" aria-labelledby="offer-title">
         <p class="kicker">Launch Offer</p>
-        <p class="price">$200</p>
-        <ul class="incl"><li>2 hours of cooking</li><li>Complimentary meet and greet</li><li>Menu and number of meals</li><li>A tidy kitchen</li></ul>
+        <h3 class="offer-title" id="offer-title">A family meal at Mum and Dad's</h3>
+        <p class="price">$200 <span class="price-when">on weekdays</span></p>
+        <p class="price-alt">$250 on Saturdays</p>
+        <p class="offer-intro">When the family comes over, nobody should be stuck in the kitchen. A cook comes to Mum and Dad's with a menu you chose together, and cooks it the way your family likes.</p>
+        <ul class="offer-list">
+          <li>2 hours of cooking, with mains for 2 to 8 people</li>
+          <li>Ready to share, or packed to keep at its best</li>
+          <li>Extra time is $60 an hour on weekdays and $75 on Saturdays. We'll tell you the total when you choose the menu.</li>
+        </ul>
         <p class="spots-line"><strong class="spots">Limited to our first 10 households</strong></p>
-        <p class="spots-line"><strong>Weekdays only</strong></p>
-        <p class="small">You buy the groceries, so this is all you pay us.</p>
         <div class="price-actions">
           <a class="btn btn-cta" href="contact.html">Book the Launch Offer</a>
         </div>
