@@ -466,6 +466,8 @@ html.modal-open,html.modal-open body{overflow:hidden}
 .offer-list li::before{content:"";position:absolute;left:2px;top:.28em;width:18px;height:18px;border-radius:50%;background:var(--brand-50) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.2l2.6 2.6L13 6.4' fill='none' stroke='%23005865' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
 .offer-card .spots-line{margin:0 0 16px}
 @media (min-width:901px){.offer-card{position:sticky;top:96px}}
+/* Phones and tablets: show the offer card first, above 'How your Launch Offer works' */
+@media (max-width:900px){#how .offer-card{order:-1}}
 </style>
 </head>
 <body>
