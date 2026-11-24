@@ -468,6 +468,20 @@ html.modal-open,html.modal-open body{overflow:hidden}
 @media (min-width:901px){.offer-card{position:sticky;top:96px}}
 /* Phones and tablets: show the offer card first, above 'How your Launch Offer works' */
 @media (max-width:900px){#how .offer-card{order:-1;position:static;top:auto}}
+
+/* ---- Sample menus: follows straight on from Our Launch Offer ---- */
+#menus{background:#fff;--bg:#fff;--surf:#fff;padding-top:0}
+.menu-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
+.menu-card{background:#fff;border:1px solid var(--neutral-xl);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.menu-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.menu-body{padding:20px}
+.menu-card h3{margin:0 0 12px}
+.menu-facts{margin:0;display:grid;gap:6px}
+.menu-facts>div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;align-items:baseline}
+.menu-facts dt{font-weight:700;color:var(--brand-500)}
+.menu-facts dd{margin:0;color:var(--grey-d)}
+.menu-facts .addon{border-top:1px solid var(--neutral-xl);padding-top:10px;margin-top:6px}
+@media (max-width:900px){.menu-cards{grid-template-columns:minmax(0,1fr);max-width:520px}}
 </style>
 </head>
 <body>
@@ -595,6 +609,50 @@ html.modal-open,html.modal-open body{overflow:hidden}
           <a class="btn btn-cta" href="contact.html">Book the Launch Offer</a>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <!-- SAMPLE MENUS -->
+  <section id="menus">
+    <div class="wrap">
+      <p class="eyebrow">Sample menus</p>
+      <h2>A taste of what we cook.</h2>
+      <p class="lead">Choose one of these, or tell us the dishes your family loves. Times include preparation and tidying up. Ingredient costs are a guide based on Woolworths prices.</p>
+      <div class="menu-cards">
+        <article class="menu-card">
+          <img src="assets/menu-lasagne.jpg" alt="A slice of beef lasagne with a rocket and parmesan salad" width="1100" height="614" loading="lazy">
+          <div class="menu-body">
+            <h3>Beef lasagne with rocket salad</h3>
+            <dl class="menu-facts">
+              <div><dt>Time</dt><dd>About 2.5–3 hours</dd></div>
+              <div><dt>Ingredients</dt><dd>About $41–53</dd></div>
+              <div class="addon"><dt>Variation</dt><dd>Vegetarian, pork or beef</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="assets/menu-roast.jpg" alt="Sliced roast beef with gravy, roast potatoes, pumpkin, carrots, peas and a Yorkshire pudding" width="1100" height="614" loading="lazy">
+          <div class="menu-body">
+            <h3>Saturday roast</h3>
+            <dl class="menu-facts">
+              <div><dt>Time</dt><dd>About 2.5–3 hours</dd></div>
+              <div><dt>Ingredients</dt><dd>About $47–66</dd></div>
+              <div class="addon"><dt>Variation</dt><dd>Beef, lamb or pork</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="assets/menu-bulgogi.jpg" alt="Beef bulgogi with steamed rice and cucumber kimchi" width="1100" height="614" loading="lazy">
+          <div class="menu-body">
+            <h3>Beef bulgogi with cucumber kimchi</h3>
+            <dl class="menu-facts">
+              <div><dt>Time</dt><dd>About 2 hours</dd></div>
+              <div><dt>Ingredients</dt><dd>About $37–51</dd></div>
+              <div class="addon"><dt>Add-on</dt><dd>Korean seasonings, $10. We bring them.</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
