@@ -488,6 +488,20 @@ html.modal-open,html.modal-open body{overflow:hidden}
 
 .offer-card .price-alt{margin-bottom:6px}
 .offer-card .price-note{margin:0 0 16px;font-size:.95rem;color:#55554F}
+
+/* Meet your cook: shortened story with "Read more" */
+.read-more{font-weight:700;color:var(--secondary);text-underline-offset:4px;white-space:nowrap}
+.read-more[hidden]{display:none}
+html:not(.js) .read-more{display:none}
+.js .cook-story{display:none}
+.js .cook-story.open{display:block}
+.cook-story p:focus{outline:none}
+
+/* Desktop header: menu text one size down, more room between the logo and the menu */
+@media (min-width:1241px){
+  nav.primary ul{gap:24px}
+  nav.primary a:not(.btn){font-size:1rem}
+}
 </style>
 </head>
 <body>
@@ -675,9 +689,12 @@ html.modal-open,html.modal-open body{overflow:hidden}
         <p class="eyebrow">Meet your cook</p>
         <h2>Hi, I'm Inyoung. I'll be the one in your kitchen.</h2>
         <p>I've spent seven years cooking in professional kitchens, including as Sous Chef at Gilbert Street Hotel. I'm a qualified chef, and cooking for people is still my favourite thing to do.</p>
-        <p>A while ago I went home to South Korea to see my parents, and joined them for Kimjang. That's when the family gets together to make a winter's worth of kimchi. Mum and Dad are in their 80s now. They love their home and they love their food, but doing it all themselves takes a lot more out of them these days. Mum told me this might be their last Kimjang.</p>
-        <p>That stayed with me. I wanted them to keep enjoying the food they've always loved, right there in their own kitchen. And I knew lots of families here would want the same for their mum or dad.</p>
-        <p>So I started Homestead Support. I'm also a service designer, which really just means I listen first. Then I keep making things better based on what each family tells me.</p>
+        <p>A while ago I went home to South Korea to see my parents, and joined them for Kimjang. <a class="read-more" id="readMore" href="#cook-story" aria-expanded="false" aria-controls="cook-story">Read more</a></p>
+        <div class="cook-story" id="cook-story">
+          <p>That's when the family gets together to make a winter's worth of kimchi. Mum and Dad are in their 80s now. They love their home and they love their food, but doing it all themselves takes a lot more out of them these days. Mum told me this might be their last Kimjang.</p>
+          <p>That stayed with me. I wanted them to keep enjoying the food they've always loved, right there in their own kitchen. And I knew lots of families here would want the same for their mum or dad.</p>
+          <p>So I started Homestead Support. I'm also a service designer, which really just means I listen first. Then I keep making things better based on what each family tells me. <a class="read-more" id="readLess" href="#cook" aria-controls="cook-story">Read less</a></p>
+        </div>
         <ul class="chips cook-chips" aria-label="Qualifications and checks">
           <li>Qualified chef (TAFE SA)</li>
           <li>Food safety trained</li>
@@ -739,6 +756,17 @@ var SPOTS_LEFT = 10;   /* Launch Offer spots still available (0 to 10). Update b
                 : SPOTS_LEFT > 0 ? "Only " + SPOTS_LEFT + " of our 10 Launch Offer spots left"
                 : "All 10 Launch Offer spots are taken. Ask us about the next one";
   d.querySelectorAll(".spots").forEach(function (n) { n.textContent = spotsText; });
+
+  // Meet your cook: "Read more" opens the rest of the story (without scripts, the whole story simply shows)
+  var story = d.getElementById("cook-story"), more = d.getElementById("readMore"), less = d.getElementById("readLess");
+  function setStory(open) {
+    story.classList.toggle("open", open);
+    more.setAttribute("aria-expanded", open ? "true" : "false");
+    more.hidden = open;
+  }
+  more.addEventListener("click", function (e) { e.preventDefault(); setStory(true); var f = story.querySelector("p"); f.setAttribute("tabindex", "-1"); f.focus({ preventScroll: true }); });
+  less.addEventListener("click", function (e) { e.preventDefault(); setStory(false); more.focus({ preventScroll: true }); more.scrollIntoView({ block: "center" }); });
+  setStory(false);
 
   // Mobile menu: the hidden checkbox opens it (works even if this script is slow or blocked); this keeps it tidy
   var btn = d.getElementById("menuBtn"), nav = d.getElementById("nav"), toggle = d.getElementById("navToggle");
